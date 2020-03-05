@@ -20,10 +20,11 @@ import {
 // } from 'react-native/Libraries/NewAppScreen';
 
 import MyComponent from './myComponent'
+import Route from './routes';
 const App: () => React$Node = () => {
   return (
     <>
-         <MyComponent/>
+         <Route/>
     </>
   );
 };

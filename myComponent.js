@@ -9,6 +9,7 @@ import {
   // Text,
   // StatusBar,
 } from 'react-native';
+import {  Link } from "react-router-native";
 
 
 // import MyComponent from './myComponent'
@@ -22,43 +23,7 @@ class MyComponent extends Component{
       edit:false
     }
 
-    add(){
-      let arr = this.state.todo;
-      let filtered = arr.filter(e => {
-        return e === this.state.data
-      })
-      if(filtered.length==0 && this.state.data!=='' ){
-        arr.push(this.state.data)
-
-        this.setState({todo:arr,data:''})
-      }
-    //   if(this.state.todo==[])
-    //   console.log(arr)
-    }
-    del(ind){
-      let filtered = this.state.todo;
-      console.log(filtered)
-      filtered.splice(ind,1);
-      this.setState({
-        todo:filtered
-      })    
-    }
-
-    edit(ind){
-      this.setState({
-        ind,
-        current:this.state.todo[ind],
-        edit:true
-      })
-      // let filtered = this.state.todo
-    }
-    kro(){
-      let filtered = this.state.todo;
-      filtered[this.state.ind] = this.state.current
-      this.setState({
-        todo:filtered
-      })
-    }
+    
       // filtered[this.state.ind]=this.state.current
     // }
     render  (){
@@ -82,37 +47,7 @@ class MyComponent extends Component{
           </Right>
         </Header>
           <Content>
-            <Form>
-              <Item>
-                <Input placeholder="Username"value={this.state.ind===''? this.state.data: this.state.current} 
-                 onChangeText={(e) => {  
-                   this.state.ind===''?
-                   this.setState({data:e })
-                   : this.setState({current:e })
-                  }} />
-              </Item>
-              <Item last>
-                <Input placeholder="Password" />
-              </Item>
-              <Item>
-                {this.state.edit===false?
-                <Button onPress={this.add.bind(this)} light><Text> Submit </Text></Button>
-                :
-                <Button onPress={this.kro.bind(this)} danger><Text> Edit </Text></Button>
-                }
-              </Item>
-
-            </Form>
-
-              {!this.state.todo? <p>Loding...</p> :this.state.todo.map((item,index)  =>{
-                return (
-            <ListItem>
-                  <Text>  {item}  </Text>
-                  <Text style={styles.del} onPress={this.del.bind(this,index)}>  X  </Text> 
-                  <Text style={styles.del} onPress={this.edit.bind(this,index)}>  Edit  </Text> 
-            </ListItem>
-                )
-              })  }
+            <Link to='/login' >Login</Link>
           </Content>
 
 
