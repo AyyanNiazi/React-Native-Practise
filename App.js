@@ -1,6 +1,8 @@
 
 import React from 'react';
-import { Container, Header, Content, Form, Item, Input } from 'native-base';
+// import { Container, Header, Content, Form, Item, Input } from 'native-base';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import {
   SafeAreaView,
@@ -20,10 +22,12 @@ import {
 // } from 'react-native/Libraries/NewAppScreen';
 
 import MyComponent from './myComponent'
-import Route from './routes';
+import Route from './container/routes';
 const App: () => React$Node = () => {
   return (
     <>
+         {/* <Route/> */}
+         {/* <Text>shasudidahi  </Text> */}
          <Route/>
     </>
   );

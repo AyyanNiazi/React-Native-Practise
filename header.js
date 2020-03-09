@@ -1,6 +1,6 @@
 
 import React,{Component} from 'react';
-// import { Container, Header, Content, Left, Body, Right,Icon,Title,Form,ListItem, Item, Input ,Button,Text} from 'native-base';
+import { Container, Header, Left, Body, Right, Button, Title, Text } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {
@@ -8,8 +8,8 @@ import {
   StyleSheet,
   // ScrollView,
   View,
-  Text,
-  Button,
+//   Text,
+//   Button,
   // StatusBar,
 } from 'react-native';
 import {  Link } from "react-router-native";
@@ -39,30 +39,47 @@ componentDidMount(){
     render  (props){
       console.log('meri props',this.props)
         return (
-        <>
-         <View>
-          {/* <Text> */}
-          <Button
-        title="Go to Login"
-        onPress={() => this.state.navigation.navigate('Login')}
-      />
-             {/* </Text> */}
-         </View>
-       
-        </>
+            <Container>
+            <Header>
+              <Left>
+                <Button hasText transparent>
+                  <Text>adbjabsd </Text>
+                </Button>
+              </Left>
+              <Body>
+                <Title>Investify Stocks</Title>
+              </Body>
+              <Right>
+                <Button hasText transparent>
+                  <Text>Cancel</Text>
+                </Button>
+              </Right>
+
+            <View style={syles.bottomCont} > 
+                <Text> Today </Text>
+                <Text> Market  </Text>
+                <Text> Stocks </Text>
+                <Text> Watch List  </Text>
+                <Text> Portfolio  </Text>
+            </View>
+            </Header>
+          </Container>
         )
     }
 };
 
 const styles = StyleSheet.create({
-    container:{
+    bottomCont:{
         // display: 'flex',
         // justifyContent: 'space-between',
         // justifyContent:'center',
         // alignItems:'center',
         // flexDirection: 'row',
         marginTop: 20,
-        flex:1
+        flex:1,
+        display:'flex',
+        justifyContent: 'space-around',
+        
        
     },
    del:{
