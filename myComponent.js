@@ -1,12 +1,13 @@
 
 import React,{Component} from 'react';
-// import { Container, Header, Content, Left, Body, Right,Icon,Title,Form,ListItem, Item, Input ,Button,Text} from 'native-base';
+import { Container, CardItem, } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {
   SafeAreaView,
   StyleSheet,
   // ScrollView,
+  Image,
   View,
   Text,
   Button,
@@ -40,14 +41,13 @@ componentDidMount(){
       console.log('meri props',this.props)
         return (
         <>
-         <View>
-          {/* <Text> */}
-          <Button
-        title="Go to Login"
-        onPress={() => this.state.navigation.navigate('Login')}
-      />
-             {/* </Text> */}
-         </View>
+         <Container>
+        <Text> My component</Text>
+          <CardItem cardBody>
+              <Image source={{uri: './apple.jpg'}} style={{height: 200, width: null, flex: 1}}/>
+            </CardItem>
+          
+         </Container>
        
         </>
         )
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         // alignItems:'center',
         // flexDirection: 'row',
         marginTop: 20,
-        flex:1
+        flex:10
        
     },
    del:{

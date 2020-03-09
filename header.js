@@ -13,6 +13,7 @@ import {
   // StatusBar,
 } from 'react-native';
 import {  Link } from "react-router-native";
+import { TouchableOpacity } from 'react-native-gesture-handler';
 // import { Actions } from 'react-native-router-flux';
 
 
@@ -47,7 +48,7 @@ componentDidMount(){
                 </Button>
               </Left>
               <Body>
-                <Title>Investify Stocks</Title>
+                <Title onPress={() => this.props.navigation.navigate('Login')} >Investify Stocks</Title>
               </Body>
               <Right>
                 <Button hasText transparent>
@@ -55,14 +56,14 @@ componentDidMount(){
                 </Button>
               </Right>
 
-            <View style={syles.bottomCont} > 
+            </Header>
+            <View style={styles.bottomCont} > 
                 <Text> Today </Text>
-                <Text> Market  </Text>
+                <Text> Market </Text>
                 <Text> Stocks </Text>
                 <Text> Watch List  </Text>
                 <Text> Portfolio  </Text>
             </View>
-            </Header>
           </Container>
         )
     }
@@ -70,15 +71,12 @@ componentDidMount(){
 
 const styles = StyleSheet.create({
     bottomCont:{
-        // display: 'flex',
-        // justifyContent: 'space-between',
-        // justifyContent:'center',
-        // alignItems:'center',
-        // flexDirection: 'row',
-        marginTop: 20,
         flex:1,
         display:'flex',
         justifyContent: 'space-around',
+        flexDirection: 'row',
+        backgroundColor:'limegreen',
+        height: 10
         
        
     },
